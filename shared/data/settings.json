@@ -1,0 +1,56 @@
+{
+
+    "geotiff" : "<%= path %>/australia-reprojected.tif",
+
+    "basemap": {
+
+        "src" : "<%= path %>/basemap-3857.jpg",
+
+        "width" : 4000,
+
+        "height" : 3283
+
+    },
+
+    "before" : "<%= path %>/before.jpg",
+
+    "after" : "<%= path %>/after.jpg",
+
+    "bbox" : [{
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[104.671555,-7.237148],[160.569992,-7.237148],[160.569992,-46.833892],[104.671555,-46.833892],[104.671555,-7.237148]]]
+        }
+    },{
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[142.713261,-35.973839],[142.713261,-21.9994],[156.160526,-21.9994],[156.160526,-35.973839],[142.713261,-35.973839]]]
+        }
+    },{
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[140.310860,-26.982970],[154.197578,-26.982970],[154.197578,-38.101874],[140.310860,-38.101874],[140.310860,-26.982970]]]
+        }
+    },{
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[149.626429,-28.914100],[149.879115,-28.914100],[149.879115,-29.130252],[149.626429,-29.130252],[149.626429,-28.914100]]]
+        }
+    }],
+
+    "annotations" : [{ "lat" : -33.878540, "lng" : 151.201710 , "length" : 50, "arrowsize" : 15, "opacity" : 0.8, "note" : "This is the Sydney"}],
+
+    "title" : "Land clearing",
+
+    "socialMessage" : "Land clearing in Australia",
+
+    "hashed" : "#LandClearing",
+
+    "fbImg" : "",
+
+    "twImg" : ""
+}

@@ -1,0 +1,197 @@
+@import "mq";
+
+#data-viz {
+	width:100%;
+	position: absolute; 
+	top: 0px;
+	min-height:300px;
+}
+
+#land-clearing {
+	z-index: 999;
+	background-repeat: no-repeat;
+	background-position: center center; 
+	background-size: auto 100% ;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	opacity: 0;
+
+	@include mq($until: mobile) {
+		background-image: url('<%= path %>/assets/320/before.jpg');
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) {
+		background-image: url('<%= path %>/assets/480/before.jpg');
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) {
+		background-image: url('<%= path %>/assets/740/before.jpg');
+	}
+
+	@include mq($from: tablet, $until: desktop) {
+		background-image: url('<%= path %>/assets/980/before.jpg');
+	}
+
+	@include mq($from: desktop, $until: wide) {
+		background-image: url('<%= path %>/assets/1300/before.jpg');
+	}
+
+	@include mq($from: wide) {
+		background-image: url('<%= path %>/assets/2000/before.jpg');
+	}
+
+}
+
+.show-clearing-map {
+	position: fixed; 
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	width:100%;
+	bottom: 0px;
+	background-color: black;
+	display: block;
+}
+
+.hide-clearing-map {
+	position: relative; 
+	height: 0px;
+	display: none;
+}
+
+#land-cleared {
+	width:100%;
+	position: fixed; 
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	width:100%;
+	bottom: 0px;
+	z-index: 999;
+	background-repeat: no-repeat;
+	background-position: center center; 
+	background-size: auto 100% ;
+	opacity: 1;
+
+	@include mq($until: mobile) {
+		background-image: url('<%= path %>/assets/320/after.jpg');
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) {
+		background-image: url('<%= path %>/assets/480/after.jpg');
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) {
+		background-image: url('<%= path %>/assets/740/after.jpg');
+	}
+
+	@include mq($from: tablet, $until: desktop) {
+		background-image: url('<%= path %>/assets/980/after.jpg');
+	}
+
+	@include mq($from: desktop, $until: wide) {
+		background-image: url('<%= path %>/assets/1300/after.jpg');
+	}
+
+	@include mq($from: wide) {
+		background-image: url('<%= path %>/assets/2000/after.jpg');
+	}
+
+}
+
+
+#land-clearing-mask {
+	width:100%;
+	position: fixed; 
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	width:100%;
+	bottom: 0px;
+	z-index: 1000;
+	background-repeat: no-repeat;
+	background-position: center center; 
+	background-size: auto 100% ;
+	opacity: 0;
+
+	@include mq($until: mobile) {
+		background-image: url('<%= path %>/assets/320/mask.png');
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) {
+		background-image: url('<%= path %>/assets/480/mask.png');
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) {
+		background-image: url('<%= path %>/assets/740/mask.png');
+	}
+
+	@include mq($from: tablet, $until: desktop) {
+		background-image: url('<%= path %>/assets/980/mask.png');
+	}
+
+	@include mq($from: desktop, $until: wide) {
+		background-image: url('<%= path %>/assets/1300/mask.png');
+	}
+
+	@include mq($from: wide) {
+		background-image: url('<%= path %>/assets/2000/mask.png');
+	}
+
+}
+
+.scroll-text {
+	z-index: 100000099;
+}
+
+.interactive-wrapper--main {
+	background-color: white;
+	z-index: 100000999;
+}
+
+.video-header-wrapper {
+	height: 100vh;
+	position: relative;
+	width: 100%;
+}
+
+.video-header-wrapper video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+.header-wrapper {
+	height: 100vh;
+	position: relative;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+
+	@include mq($until: mobile) {
+		background-image: url('<%= path %>/assets/1300/header.jpg');
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) {
+		background-image: url('<%= path %>/assets/1300/header.jpg');
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) {
+		background-image: url('<%= path %>/assets/1300/header.jpg');
+	}
+
+	@include mq($from: tablet, $until: desktop) {
+		background-image: url('<%= path %>/assets/1300/header.jpg');
+	}
+
+	@include mq($from: desktop, $until: wide) {
+		background-image: url('<%= path %>/assets/1300/header.jpg');
+	}
+
+	@include mq($from: wide) {
+		background-image: url('<%= path %>/assets/2000/header.jpg');
+	}
+
+}

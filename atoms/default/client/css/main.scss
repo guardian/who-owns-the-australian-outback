@@ -1,9 +1,83 @@
 @import "fonts";
 @import "mq";
 @import "palette";
-// @import "enhancer";
 
+@import "scrolly";
+@import "outback";
+@import "interactive";
+
+@import "header";
+@import "social";
+@import "footer";
+
+html,
+body,
+.element-atom,
 .interactive-atom {
-    margin: 0;
-    padding: 0;
+	width: 100%;
+	max-width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.element-atom,
+.interactive-atom {
+    margin: 0 !important;
+    a {
+		color: $primary;
+	}
+}
+
+.interactive-wrapper {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.main {
+	margin: 0 auto;
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+	max-width: 1300px;
+}
+@media (min-width: 46.25em) {
+	.main {
+		max-width: 740px;
+	}
+}
+@media (min-width: 61.25em) {
+	.main {
+		max-width: 980px;
+	}
+}
+@media (min-width: 81.25em) {
+	.main {
+		max-width: 1300px;
+	}
+}
+
+
+.mainCol {
+	max-width: 620px;
+	display: block;
+	position: relative;
+	padding: 0 10px;
+	margin-top: 10px;
+	z-index: 100;
+}
+@media (min-width: 71.25em) {
+	.mainCol {
+		margin-left: 160px;
+	}
+}
+@media (min-width: 81.25em) {
+	.mainCol {
+		margin-left: 240px;
+	}
+}
+@media (min-width: 61.25em) and (max-width: 46.24em) {
+	.mainCol {
+		margin-left: 20px;
+	}
 }

@@ -1,0 +1,116 @@
+@import "mq";
+
+
+.header_container {
+	width: 100%;
+	position: relative;
+	background-repeat: no-repeat;
+
+    	height: 0px;
+    	padding-bottom: 50%;
+    	background-color: red;
+	/*
+
+    @include mq($until: mobileLandscape) {
+    	height: 60vh;
+    	padding-bottom: 40%;
+    	background-size: cover;
+    	background-position: center;
+    	background-image: url("<%= path %>/header-480.jpg");
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+    	height: 60vh;
+    	padding-bottom: 40%;
+    	background-size: cover;
+    	background-position: center;
+    	background-image: url("<%= path %>/header-740.jpg");
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+    	height: 70vh;
+    	padding-bottom: 30%;
+    	background-size: cover;
+    	background-position: center;
+    	background-image: url("<%= path %>/header-960.jpg");
+    }
+
+    @include mq($from: desktop) {
+    	height: 0px;
+    	padding-bottom: 50%;
+    	background-size: 100% auto;
+    	background-position: cover;
+    	background-image: url("<%= path %>/header.jpg");
+    }
+
+    */
+
+	.header-wrapper {
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+
+		h1 {
+
+			font-family: "Guardian Headline", "Guardian Egyptian Web", "Guardian Headline Full", Georgia, serif;
+			font-weight: 900;
+			color: #fff;
+			display: inline;
+			padding-bottom: .1em;
+			background: linear-gradient(#121212, #121212) no-repeat;
+			box-shadow: 6px 0 0 #121212, -12px 0 0 #121212;
+			line-height: 1.34;
+
+		    @include mq($until: mobileLandscape) {
+				font-size: 28px;
+		    }
+
+		    @include mq($from: mobileLandscape, $until: tablet) {
+				font-size: 38px;
+		    }
+
+		    @include mq($from: tablet, $until: desktop) {
+				font-size: 38px;
+		    }
+
+		    @include mq($from: desktop) {
+				font-size: 46px;
+				box-shadow: 6px 0 0 #121212, -10px 0 0 #121212;
+		    }
+
+		}
+
+
+		.int-tag {
+			font-size: 18px;
+			line-height: 24px;
+			font-family: "Guardian Headline", "Guardian Egyptian Web", "Guardian Headline Full", Georgia, serif;
+			font-weight: 900;
+			color: black;
+			background-color: #ffe500;
+			display: inline-block;
+			padding: 2px 5px 5px;
+			transform: translateY(2px);
+			margin-left: -10px;
+		}
+
+		.int-tag::before {
+		  content: url("<%= path %>/badge.svg");
+		  float: left;
+		  width: 26px;
+		  height: 26px;
+		  margin-right: 5px;
+		}
+
+
+	}
+
+
+}
+
+
+
+
+
+
+

@@ -218,7 +218,6 @@ export class Ownership {
         self.context.stroke();
         self.context.closePath();
 
-
         if (self.active) {
 
             var nwba = self.projection([149.626429,-28.914100])
@@ -240,14 +239,30 @@ export class Ownership {
 
     }
 
+    getColour(type) {
+
+        var colours = [ "#d73027", "#fc8d59", "#fee090", "#ffffbf", "#e0f3f8", "#4575b4", "#4d4d4d" ]
+
+        var licenses = [ "Exploration Tenement", "Production Tenement Application", "Production Tenement", "Exploration Tenement Application", "Retention Tenement", "Exploration Release Area", null ]
+
+        var index = licenses.indexOf(type); 
+
+        return colours[index]
+
+    }
+
     drawLGAS() {
 
         var self = this
 
-        var choropleth = topojson.feature(self.mines,self.mines.objects.expired).features
+        var choropleth = topojson.feature(self.mines,self.mines.objects.permits).features
+
+        //var list = choropleth.map(item => item.properties.LEASE_TYPE)
+
+        //var categories = Array.from( new Set(list) )
 
         choropleth.forEach(function(d) {
-            self.context.fillStyle = 'red'; //(d.properties.clearing!=null) ? self.colour(d.properties.clearing) : "lightgrey" ;
+            self.context.fillStyle = self.getColour(d.properties.LEASE_TYPE);
             self.context.beginPath();
             self.path(d);
             self.context.fill();
@@ -415,7 +430,19 @@ export class Ownership {
 
         }});
 
+
         this.scrolly.addTrigger({num: 2, do: () => {
+
+            this.wayfinder(this.scrolly.lastI)
+
+            self.active = false
+
+            self.drawLGAS()
+            
+        }});
+
+
+        this.scrolly.addTrigger({num: 3, do: () => {
 
             this.wayfinder(this.scrolly.lastI)
 
@@ -433,7 +460,7 @@ export class Ownership {
 
         }});
 
-        this.scrolly.addTrigger({num: 3, do: () => {
+        this.scrolly.addTrigger({num: 4, do: () => {
 
             this.wayfinder(this.scrolly.lastI)
 
@@ -454,7 +481,7 @@ export class Ownership {
             
         }});
 
-        this.scrolly.addTrigger({num: 4, do: () => {
+        this.scrolly.addTrigger({num: 5, do: () => {
 
             this.wayfinder(this.scrolly.lastI)
 
@@ -472,16 +499,6 @@ export class Ownership {
 
             self.drawMap()
 
-        }});
-
-        this.scrolly.addTrigger({num: 5, do: () => {
-
-            this.wayfinder(this.scrolly.lastI)
-
-            self.active = false
-
-            self.drawLGAS()
-            
         }});
 
         this.scrolly.doScrollAction(self.current)

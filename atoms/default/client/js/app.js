@@ -2,7 +2,7 @@
 // just do e.g. import Scatter from "shared/js/scatter.js"
 // https://doi.pangaea.de/10.1594/PANGAEA.910894
 
-import mines from 'shared/data/expired.json'
+import mines from 'shared/data/permits.json'
 import states from 'shared/data/au-states.json'
 import places from 'shared/data/places.json'
 import settings from 'shared/data/settings'
